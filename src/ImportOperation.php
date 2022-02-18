@@ -71,13 +71,13 @@ trait ImportOperation
 
     }
 
-    protected function setupImportDefaults()
+    protected function setupImportDefaults($stack = 'top')
     {
 
         $this->crud->allowAccess('import');
 
-        $this->crud->operation('list', function () {
-            $this->crud->addButton('top', 'import', 'view', 'csv-import::button-import');
+        $this->crud->operation('list', function () use($stack){
+            $this->crud->addButton($stack, 'import', 'view', 'csv-import::button-import');
         });
 
         $this->crud->operation('import', function () {
@@ -163,7 +163,7 @@ trait ImportOperation
             'ISO-8859-1'
           ];
 
-        $csvDataFile = CsvData::create([
+        $csvDataFile = new CsvData([
             'csv_filename' => $request->file('csv_file')->getClientOriginalName(),
             'csv_data' => json_encode(mb_convert_encoding($data, 'UTF-8', $encodings))
         ]);
