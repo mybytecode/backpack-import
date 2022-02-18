@@ -1,12 +1,12 @@
 {
-    "name": "ckhandla94/backpack-import",
+    "name": "mybytecode/backpack-import",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "authors": [{
-        "name": "Chetan Khandla",
-        "email": "ckhandla94@gmail.com"
+        "name": "mybytecode",
+        "email": "mybytecode@gmail.com"
     }],
     "require": {
         "atk14/csv-reader": "^1.1"
