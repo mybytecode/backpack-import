@@ -77,7 +77,7 @@ trait ImportOperation
         $this->crud->allowAccess('import');
 
         $this->crud->operation('list', function () use($stack){
-            $this->crud->addButton($stack, 'import', 'view', 'csv-import::button-import');
+            $this->crud->addButton($stack, 'import', 'view', 'csv-import::button_import');
         });
 
         $this->crud->operation('import', function () {
