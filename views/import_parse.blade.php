@@ -18,6 +18,7 @@
                 <form class="form-horizontal" method="POST" action="{{ url($crud->route.'/import-process') }}">
                     {{ csrf_field() }}
                     <input type="hidden" name="csv_data_file_id" value="{{ $csv_data_file->id }}"/>
+                    <input type="hidden" name="csv_data" value="{{ $csv_data_file->csv_data }}"/>
                     <div class="mb-3"> 
                         <a href="{{ url($crud->route.'/import') }}" class="btn btn-default">Back</a>     
                         <button type="submit" class="btn ml-2 btn-primary">Import Data</button> 

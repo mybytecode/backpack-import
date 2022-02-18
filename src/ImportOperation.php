@@ -198,8 +198,7 @@ trait ImportOperation
 
         // load the data stored in the database.
         $requestFields = $request->fields;
-        $data = CsvData::find($request->csv_data_file_id);
-        $csv_data = json_decode($data->csv_data, true);
+        $csv_data = json_decode($request->csv_data, true);
 
         $entities = [];
         foreach ($csv_data as $idx_1 => $row) {
